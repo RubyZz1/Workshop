@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   ScrollView,
   TouchableOpacity,
@@ -15,6 +15,8 @@ import {
   useTheme,
   themeColor,
 } from "react-native-rapi-ui";
+import authAPI from "./authAPI";
+import authContext from "./authContext";
 
 export default function ({ navigation }) {
   const { isDarkmode, setTheme } = useTheme();
@@ -22,6 +24,8 @@ export default function ({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const { setIsAuthenticated } = useContext(authContext);
 
   async function login() {
     setLoading(true);

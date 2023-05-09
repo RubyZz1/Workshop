@@ -1,5 +1,5 @@
-import React from "react";
-import { View, Linking } from "react-native";
+import React, { useEffect, useState } from "react";
+import { View, Linking, Image } from "react-native";
 import { getAuth, signOut } from "firebase/auth";
 import {
   Layout,
@@ -12,10 +12,12 @@ import {
   themeColor,
 } from "react-native-rapi-ui";
 import { Ionicons } from "@expo/vector-icons";
+import { StyleSheet } from "react-native-web";
 
 export default function ({ navigation }) {
   const { isDarkmode, setTheme } = useTheme();
   const auth = getAuth();
+  
   return (
     <Layout>
       <TopNav
@@ -44,19 +46,19 @@ export default function ({ navigation }) {
       >
         <Section style={{ marginTop: 20 }}>
           <SectionContent>
-            <Text fontWeight="bold" style={{ textAlign: "center" }}>
-              These UI components provided by Rapi UI
-            </Text>
             <Button
-              style={{ marginTop: 10 }}
-              text="Rapi UI Documentation"
-              status="info"
-              onPress={() => Linking.openURL("https://rapi-ui.kikiding.space/")}
+              text="Stocks"
+              onPress={() => {
+                navigation.navigate("Stocks");
+              }}
+              style={{
+                marginTop: 10,
+              }}
             />
             <Button
-              text="Go to second screen"
+              text="Commandes"
               onPress={() => {
-                navigation.navigate("SecondScreen");
+                navigation.navigate("Commande");
               }}
               style={{
                 marginTop: 10,
@@ -78,3 +80,4 @@ export default function ({ navigation }) {
     </Layout>
   );
 }
+

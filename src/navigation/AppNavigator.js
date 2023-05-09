@@ -6,7 +6,6 @@ import { AuthContext } from "../provider/AuthProvider";
 
 // Main
 import Home from "../screens/Home";
-import SecondScreen from "../screens/SecondScreen";
 
 // Auth screens
 import Login from "../screens/auth/Login";
@@ -14,16 +13,19 @@ import Register from "../screens/auth/Register";
 import ForgetPassword from "../screens/auth/ForgetPassword";
 
 import Loading from "../screens/utils/Loading";
+import Stocks from "../screens/Stocks";
+import ProductStock from "../screens/ProductStock";
+import Commande from "../screens/Commande";
 
 // Better put your these secret keys in .env file
 const firebaseConfig = {
-  apiKey: "",
-  authDomain: "",
-  databaseURL: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: "",
+  apiKey: "AIzaSyCnm3H6-zg816j2H5-ZpIS3cXlSpF3XqH4",
+  authDomain: "acmenative.firebaseapp.com",
+  projectId: "acmenative",
+  storageBucket: "acmenative.appspot.com",
+  messagingSenderId: "986956371948",
+  appId: "1:986956371948:web:5042e65327ce439a05d2c9",
+  measurementId: "G-PXLNKHNLNE"
 };
 if (getApps().length === 0) {
   initializeApp(firebaseConfig);
@@ -55,7 +57,9 @@ const Main = () => {
       }}
     >
       <MainStack.Screen name="Home" component={Home} />
-      <MainStack.Screen name="SecondScreen" component={SecondScreen} />
+      <MainStack.Screen name="Stocks" component={Stocks} />
+      <MainStack.Screen name="ProductStock" component={ProductStock} />
+      <MainStack.Screen name="Commande" component={Commande} />
     </MainStack.Navigator>
   );
 };
