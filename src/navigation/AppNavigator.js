@@ -18,7 +18,7 @@ import ProductStock from "../screens/ProductStock";
 import Commande from "../screens/Commande";
 import SuiviCommande from "../screens/SuiviCommande";
 
-// Better put your these secret keys in .env file
+
 const firebaseConfig = {
   apiKey: "AIzaSyCnm3H6-zg816j2H5-ZpIS3cXlSpF3XqH4",
   authDomain: "acmenative.firebaseapp.com",

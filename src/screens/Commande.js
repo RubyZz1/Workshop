@@ -18,7 +18,7 @@ export default function ({ navigation }) {
   const [emailUser, setEmailUser] = useState();
 
   const handleSuivreCommande = (idCommande) => {
-    navigation.navigate('SuiviCommande', { idCommande });
+    navigation.navigate("SuiviCommande", { idCommande });
   };
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function ({ navigation }) {
     });
   }, []);
 
-  console.log(commandes)
+  console.log(commandes);
 
   return (
     <Layout>
@@ -69,67 +69,66 @@ export default function ({ navigation }) {
             <Text style={styles.header}>Suivie</Text>
           </View>
           {commandes.map((commande) => (
-  <View style={styles.row} key={commande.id}>
-    <Text style={styles.cell}>{commande.id}</Text>
-    <Text style={styles.cell}>{commande.reference}</Text>
-    <Text style={styles.cell}>{commande.qteProduit}</Text>
-    <Text style={styles.cell}>{commande.prixTotal}€</Text>
-    <Text style={styles.cell}>
-      {new Date(commande.dateAchat).toLocaleDateString("fr-FR")}
-    </Text>
-    <TouchableOpacity style={styles.button} onPress={() => handleSuivreCommande(commande.id)}>
-      <Text style={styles.buttonText}>Suivre commande</Text>
-    </TouchableOpacity>
-  </View>
-))}
-
-
+            <View style={styles.row} key={commande.id}>
+              <Text style={styles.cell}>{commande.id}</Text>
+              <Text style={styles.cell}>{commande.reference}</Text>
+              <Text style={styles.cell}>{commande.qteProduit}</Text>
+              <Text style={styles.cell}>{commande.prixTotal}€</Text>
+              <Text style={styles.cell}>
+                {new Date(commande.dateAchat).toLocaleDateString("fr-FR")}
+              </Text>
+              <TouchableOpacity
+                style={styles.button}
+                onPress={() => handleSuivreCommande(commande.id)}
+              >
+                <Text style={styles.buttonText}>Suivre commande</Text>
+              </TouchableOpacity>
+            </View>
+          ))}
         </View>
       </View>
     </Layout>
   );
 }
 
-
 const styles = StyleSheet.create({
   container: {
-  flex: 1,
-  padding: 16,
-  backgroundColor: "#fff",
+    flex: 1,
+    padding: 16,
+    backgroundColor: "#fff",
   },
   title: {
-  fontSize: 20,
-  fontWeight: "bold",
-  marginBottom: 16,
+    fontSize: 20,
+    fontWeight: "bold",
+    marginBottom: 16,
   },
   table: {
-  flex: 1,
-  borderColor: "#ccc",
-  borderWidth: 1,
-  borderRadius: 8,
-  overflow: "hidden",
-  marginTop: 16,
+    flex: 1,
+    borderColor: "#ccc",
+    borderWidth: 1,
+    borderRadius: 8,
+    overflow: "hidden",
+    marginTop: 16,
   },
   row: {
-  flexDirection: "row",
-  justifyContent: "space-between",
-  alignItems: "center",
-  backgroundColor: "#fafafa",
-  borderBottomWidth: 1,
-  borderBottomColor: "#ccc",
-  paddingVertical: 12,
-  paddingHorizontal: 16,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: "#fafafa",
+    borderBottomWidth: 1,
+    borderBottomColor: "#ccc",
+    paddingVertical: 12,
+    paddingHorizontal: 16,
   },
   header: {
-  fontWeight: "bold",
-  flex: 1,
-  textAlign: "center",
+    fontWeight: "bold",
+    flex: 1,
+    textAlign: "center",
   },
   cell: {
-  flex: 1,
-  textAlign: "center",
+    flex: 1,
+    textAlign: "center",
   },
-
 
   row: {
     flexDirection: "row",
@@ -153,4 +152,4 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
   },
-  });
+});

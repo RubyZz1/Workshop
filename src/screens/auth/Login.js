@@ -32,10 +32,8 @@ export default function ({ navigation }) {
     await signInWithEmailAndPassword(auth, email, password).catch(function (
       error
     ) {
-      // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
-      // ...
       setLoading(false);
       alert(errorMessage);
     });
