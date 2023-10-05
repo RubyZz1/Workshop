@@ -22,6 +22,7 @@ export default function App(props) {
   }, []);
 
   return (
+    
     <ThemeProvider images={images}>
       <AuthProvider>
         <AppNavigator />

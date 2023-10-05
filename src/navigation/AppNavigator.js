@@ -6,27 +6,25 @@ import { AuthContext } from "../provider/AuthProvider";
 
 // Main
 import Home from "../screens/Home";
+import MesRDV from "../screens/MesRDV";
+import Profil from "../screens/Profil";
+import Annonces from "../screens/Annonces";
 
 // Auth screens
 import Login from "../screens/auth/Login";
 import Register from "../screens/auth/Register";
 import ForgetPassword from "../screens/auth/ForgetPassword";
-
 import Loading from "../screens/utils/Loading";
-import Stocks from "../screens/Stocks";
-import ProductStock from "../screens/ProductStock";
-import Commande from "../screens/Commande";
-import SuiviCommande from "../screens/SuiviCommande";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCnm3H6-zg816j2H5-ZpIS3cXlSpF3XqH4",
-  authDomain: "acmenative.firebaseapp.com",
-  projectId: "acmenative",
-  storageBucket: "acmenative.appspot.com",
-  messagingSenderId: "986956371948",
-  appId: "1:986956371948:web:5042e65327ce439a05d2c9",
-  measurementId: "G-PXLNKHNLNE"
+  apiKey: "AIzaSyBhu6YmGqvF7EtmKf-a54BPwNaeY8MvLi4",
+  authDomain: "acme-native-887f6.firebaseapp.com",
+  projectId: "acme-native-887f6",
+  storageBucket: "acme-native-887f6.appspot.com",
+  messagingSenderId: "808789592708",
+  appId: "1:808789592708:web:591505ee9fa8ed3d53d0d1",
+  measurementId: "G-4VPLNKGPC5"
 };
 if (getApps().length === 0) {
   initializeApp(firebaseConfig);
@@ -57,11 +55,11 @@ const Main = () => {
         headerShown: false,
       }}
     >
+      
       <MainStack.Screen name="Home" component={Home} />
-      <MainStack.Screen name="Stocks" component={Stocks} />
-      <MainStack.Screen name="ProductStock" component={ProductStock} />
-      <MainStack.Screen name="Commande" component={Commande} />
-      <MainStack.Screen name="SuiviCommande" component={SuiviCommande} initialParams={{ itemId: 0 }} />
+      <MainStack.Screen name="MesRDV" component={MesRDV} />
+      <MainStack.Screen name="Profil" component={Profil} />
+      <MainStack.Screen name="Annonces" component={Annonces} />
     </MainStack.Navigator>
   );
 };
