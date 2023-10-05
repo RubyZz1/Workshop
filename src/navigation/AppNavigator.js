@@ -15,6 +15,10 @@ import Login from "../screens/auth/Login";
 import Register from "../screens/auth/Register";
 import ForgetPassword from "../screens/auth/ForgetPassword";
 import Loading from "../screens/utils/Loading";
+import Stocks from "../screens/Stocks";
+import ProductStock from "../screens/ProductStock";
+import Commande from "../screens/Commande";
+import SuiviCommande from "../screens/SuiviCommande";
 
 
 const firebaseConfig = {
@@ -57,9 +61,10 @@ const Main = () => {
     >
       
       <MainStack.Screen name="Home" component={Home} />
-      <MainStack.Screen name="MesRDV" component={MesRDV} />
-      <MainStack.Screen name="Profil" component={Profil} />
-      <MainStack.Screen name="Annonces" component={Annonces} />
+      <MainStack.Screen name="Stocks" component={Stocks} />
+      <MainStack.Screen name="ProductStock" component={ProductStock} />
+      <MainStack.Screen name="Commande" component={Commande} />
+      <MainStack.Screen name="SuiviCommande" component={SuiviCommande} initialParams={{ itemId: 0 }} />
     </MainStack.Navigator>
   );
 };
